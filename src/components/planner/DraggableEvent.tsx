@@ -146,7 +146,7 @@ export const DraggableEvent = memo(function DraggableEvent({
           )}
           style={{
             ...style,
-            backgroundColor: `${color}22`,
+            backgroundColor: `${color}38`,
             borderColor: color,
             borderLeftWidth: '4px'
           }}
