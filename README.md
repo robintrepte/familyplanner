@@ -27,6 +27,16 @@ Family Planner is a **7-day week calendar** built for couples and families. View
 - **PWA-ready** — Install to your phone or desktop; runs fullscreen like an app
 - **Dark mode** — System-aware theme with tuned colors for all categories
 
+### Screenshots
+
+**Week view** — 7-day grid with husband and wife columns, categories, and A/B week toggle.
+
+<img src="screenshots/week-view.png" alt="Weekly planner grid" width="100%" />
+
+**Add / edit event** — Sheet to create or edit an event (title, category, time, person).
+
+<img src="screenshots/add-new-event-view.png" alt="Add new event form" width="100%" />
+
 ---
 
 ## Features
