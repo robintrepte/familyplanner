@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start -p 3021",
     "lint": "eslint",
-    "generate-favicons": "node scripts/generate-favicons.mjs"
+    "generate-favicons": "node scripts/generate-favicons.mjs",
+    "seed-showcase": "npx tsx src/db/seed-showcase.ts"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

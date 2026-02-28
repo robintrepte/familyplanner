@@ -123,6 +123,10 @@ Create `.env.local` in the project root (or copy from `.env.example` if you add 
    ```bash
    npx tsx src/db/seed-plan.ts
    ```
+   For generic showcase/demo data (screenshots, no personal data):
+   ```bash
+   npm run seed-showcase
+   ```
 
 ---
 
