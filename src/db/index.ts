@@ -3,6 +3,7 @@ import Database from "better-sqlite3";
 import { mkdirSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
+import { FIXED_CATEGORIES } from "@/lib/constants";
 import * as schema from "./schema";
 
 const DEFAULT_DATABASE_PATH = process.env.VERCEL
@@ -67,5 +68,25 @@ ensureDatabaseDirectory(databasePath);
 
 const sqlite = new Database(databasePath);
 sqlite.exec(SCHEMA_SQL);
+
+const upsertFixedCategory = sqlite.prepare(`
+  INSERT INTO categories (id, name, color)
+  VALUES (@id, @name, @color)
+  ON CONFLICT(id) DO UPDATE SET
+    name = excluded.name,
+    color = excluded.color
+`);
+
+const ensureFixedCategories = sqlite.transaction(() => {
+  for (const category of FIXED_CATEGORIES) {
+    upsertFixedCategory.run({
+      id: category.id,
+      name: category.name,
+      color: category.color,
+    });
+  }
+});
+
+ensureFixedCategories();
 
 export const db = drizzle(sqlite, { schema });
