@@ -4,6 +4,7 @@ import { mergeCategories } from "@/lib/constants";
 import { validateCategoryBody } from "@/lib/api-validation";
 import { NextResponse } from "next/server";
 
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET() {

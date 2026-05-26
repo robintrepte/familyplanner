@@ -4,6 +4,8 @@ import { eq } from "drizzle-orm";
 import { validateEventBody } from "@/lib/api-validation";
 import { NextResponse } from "next/server";
 
+export const runtime = "nodejs";
+
 const ID_MAX_LEN = 100;
 
 function isValidId(id: string): boolean {
