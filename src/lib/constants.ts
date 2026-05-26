@@ -12,7 +12,7 @@ export const FIXED_CATEGORY_IDS = [
 
 export type FixedCategoryId = (typeof FIXED_CATEGORY_IDS)[number];
 
-/** Hardcoded categories: not stored in DB, always present. */
+/** Hardcoded categories: always present in the UI and upserted into SQLite for referential integrity. */
 export const FIXED_CATEGORIES: Array<{
   id: FixedCategoryId;
   name: string;
