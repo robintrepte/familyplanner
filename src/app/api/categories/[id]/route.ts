@@ -5,6 +5,7 @@ import { validateCategoryBody } from "@/lib/api-validation";
 import { NextResponse } from "next/server";
 import { eq } from "drizzle-orm";
 
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const ID_MAX_LEN = 100;

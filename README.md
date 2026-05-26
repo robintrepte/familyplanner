@@ -149,6 +149,8 @@ Create `.env.local` in the project root (or copy from `.env.example` if you add 
 
 2. **Environment:** Set `DATABASE_URL` to an absolute path (or a persistent volume path in Docker). Ensure the process can read/write the SQLite file. For correct SEO and Open Graph links when shared, set `NEXT_PUBLIC_APP_URL` to your public URL (e.g. `https://your-domain.com`).
 
+   **Vercel note:** Vercel's serverless filesystem is read-only except for `/tmp`. If `DATABASE_URL` is unset on Vercel, the app uses `/tmp/familyplanner.sqlite` and creates the schema automatically so API routes can start. That file is ephemeral and can be reset between invocations/deployments, so use a host with a persistent volume or switch to an external database adapter for durable production data.
+
 3. **Run:**
    ```bash
    npm run start
